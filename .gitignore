@@ -1,0 +1,101 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+*.out
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Docker
+docker-compose.override.yml
+
+# AWS
+*.pem
+*.key
+
+# Secrets and Keys
+**/weather.pem
+**/weatherv2.pem
+credentials
+config
+
+# Temporary files
+temps/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Project specific
+README.old.md
+fig1.xml
+
+# Test files
+test_output/
+coverage/
+.coverage
+htmlcov/
+
+# Node modules (if added later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Backup files
+*.backup
