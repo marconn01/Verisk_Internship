@@ -308,6 +308,7 @@ terraform apply
 ```bash
 cd backend
 python test_api.py
+#it only tests api works correctly or not
 ```
 
 ### Manual Testing
@@ -332,7 +333,6 @@ curl "http://localhost:5000/forecast?city=Paris"
 - **Container Health**: Docker health checks configured in docker-compose.yml
 - **SQS Metrics**: Queue depth, message age, processing time
 - **DynamoDB Metrics**: Read/write capacity, throttling events
-- **Custom Alerts**: Temperature threshold alerts stored in DynamoDB
 
 ## 🔐 Security
 

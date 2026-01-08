@@ -6,12 +6,10 @@ data "aws_vpc" "default" {
   default = true
 }
 
-
-# Security Group (import your existing one or create new if needed)
 resource "aws_security_group" "weather_sg" {
-  name        = "launch-wizard-1"
-  description = "launch-wizard-1 created by AWS console"
-  vpc_id      = "vpc-0b93efe777cf56dc2"
+  name        = "weather-app-sg"
+  description = "Security group for weather application"
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 22
@@ -23,13 +21,6 @@ resource "aws_security_group" "weather_sg" {
   ingress {
     from_port   = 5000
     to_port     = 5000
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 5500
-    to_port     = 5500
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -55,23 +46,17 @@ resource "aws_security_group" "weather_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  lifecycle {
-    prevent_destroy = true
-    ignore_changes = [
-      description,
-      tags,
-      name
-    ]
+  tags = {
+    Name = "weather-app-sg"
   }
 }
 
-
 resource "aws_instance" "weather_ec2" {
-  ami                    = "ami-0ecb62995f68bb549"
-  instance_type          = "t3.micro"
-  subnet_id              = "subnet-0a74c826b6eca9d19"
-  vpc_security_group_ids = ["sg-0ffcafc669785d7cf"]
-  key_name               = "weatherv2"
+  ami                    = var.ec2_ami
+  instance_type          = var.ec2_type
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = [var.security_group_id != "" ? var.security_group_id : aws_security_group.weather_sg.id]
+  key_name               = var.ssh_key_name
 
   tags = {
     Name = "weather-app"
@@ -84,12 +69,13 @@ resource "aws_s3_bucket" "weather_bucket" {
   tags = {
     Name = var.weather_bucket_name
   }
-  }
+}
 
 resource "aws_s3_bucket_lifecycle_configuration" "weather_bucket_lifecycle" {
   bucket = aws_s3_bucket.weather_bucket.id
+  
   rule {
-    id    = "Delete 30 days old objects"
+    id     = "delete-old-snapshots"
     status = "Enabled"
 
     expiration {
@@ -98,16 +84,26 @@ resource "aws_s3_bucket_lifecycle_configuration" "weather_bucket_lifecycle" {
   }
 }
 
-# ECR repositories (import existing ones)
 resource "aws_ecr_repository" "weather_backend" {
   name = var.backend_ecr_name
+
+  tags = {
+    Name = "weather-backend"
+  }
 }
 
 resource "aws_ecr_repository" "weather_frontend" {
   name = var.frontend_ecr_name
+
+  tags = {
+    Name = "weather-frontend"
+  }
 }
 
 resource "aws_ecr_repository" "weather_snapshot" {
   name = var.snapshot_ecr_name
-}
 
+  tags = {
+    Name = "weather-snapshot"
+  }
+}

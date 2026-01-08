@@ -8,5 +8,16 @@ output "security_group_id" {
 
 output "weather_bucket_name" {
   value = aws_s3_bucket.weather_bucket.bucket
+}
 
+output "backend_ecr_url" {
+  value = aws_ecr_repository.weather_backend.repository_url
+}
+
+output "frontend_ecr_url" {
+  value = aws_ecr_repository.weather_frontend.repository_url
+}
+
+output "snapshot_ecr_url" {
+  value = aws_ecr_repository.weather_snapshot.repository_url
 }
