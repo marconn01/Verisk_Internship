@@ -99,3 +99,8 @@ yarn.lock
 
 # Backup files
 *.backup
+*.sh
+*.ps1
+
+PRE_PUSH_CHECKLIST.md
+REORGANIZATION_SUMMARY.md
