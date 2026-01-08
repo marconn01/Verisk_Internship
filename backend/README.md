@@ -4,13 +4,13 @@ Flask-based REST API for weather alerts with caching and logging.
 
 ## Features
 
-- 🌤️ Current weather data
-- 📅 5-day weather forecast
-- 🚨 Temperature-based alerts
-- 💾 In-memory caching (10-minute TTL)
-- 📝 Request logging
-- ❤️ Health check endpoint
-- 🔒 CORS enabled
+- Current weather data
+- 5-day weather forecast
+- Temperature-based alerts
+- In-memory caching (10-minute TTL)
+- Request logging
+- Health check endpoint
+- CORS enabled
 
 ## Setup Instructions
 

@@ -2,7 +2,7 @@
 
 Get the Weather Alert App running in under 5 minutes!
 
-## 🎯 Choose Your Path
+## Choose Your Path
 
 ### Option 1: Local Development (Docker)
 **Best for:** Testing locally before deploying
@@ -82,7 +82,7 @@ Open browser to `http://localhost` and search for any city.
 
 ---
 
-## 📊 View Logs
+## View Logs
 
 ```bash
 # All logs
@@ -97,7 +97,7 @@ docker-compose logs -f frontend
 
 ---
 
-## 🛑 Stop Application
+## Stop Application
 
 ```bash
 docker-compose down
@@ -126,16 +126,16 @@ sudo systemctl start docker
 
 ---
 
-## 📚 Next Steps
+## Next Steps
 
-1. ✅ Read [README.md](README.md) for full overview
-2. ✅ Check [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) to understand the system
-3. ✅ See [docs/API.md](docs/API.md) for API documentation
-4. ✅ Review [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for AWS deployment
+1. Read [README.md](README.md) for full overview
+2. Check [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) to understand the system
+3. See [docs/API.md](docs/API.md) for API documentation
+4. Review [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for AWS deployment
 
 ---
 
-## 💡 Pro Tips
+## Tips
 
 - Use `docker-compose up --build` to rebuild after code changes
 - Set `LOG_LEVEL=DEBUG` in `.env` for detailed logs
@@ -144,10 +144,9 @@ sudo systemctl start docker
 
 ---
 
-## 🆘 Need Help?
+## More Docs
 
 - Check [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for troubleshooting
-- Review [CONTRIBUTING.md](CONTRIBUTING.md) for development guidelines
 - Open an issue on GitHub
 
 ---

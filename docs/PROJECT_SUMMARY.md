@@ -10,7 +10,7 @@
 
 ---
 
-## What I Built
+## What is it
 
 Weather web app that shows current weather and alerts for multiple cities. Includes automated hourly data collection.
 
@@ -116,33 +116,7 @@ Weather web app that shows current weather and alerts for multiple cities. Inclu
 
 ---
 
-## Challenges
 
-**Challenge:** Docker containers wouldn't start on EC2  
-**Solution:** Fixed port conflicts in docker-compose
-
-**Challenge:** SQS messages not processing  
-**Solution:** Added IAM permissions for EC2 role
-
-**Challenge:** DynamoDB write errors  
-**Solution:** Used Decimal type instead of float
-
-**Challenge:** Terraform state conflicts  
-**Solution:** Used remote state in S3 (optional)
-
----
-
-## What I Learned
-
-- How to deploy apps to AWS
-- Docker multi-container setup
-- Terraform for infrastructure
-- CI/CD with GitHub Actions
-- Message queues (SQS)
-- IAM roles and permissions
-- Cron jobs for scheduled tasks
-
----
 
 ## Links
 

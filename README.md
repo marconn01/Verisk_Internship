@@ -14,39 +14,39 @@ This project is a comprehensive weather alert system built as part of a DevOps i
 ### Key Features
 
 **Backend (Python/Flask)**
-- ✅ Real-time weather data from OpenWeatherMap API
-- ✅ 5-day weather forecasting with 3-hour intervals
-- ✅ Temperature-based alerting system (high/low thresholds)
-- ✅ In-memory caching with TTL for performance optimization
-- ✅ RESTful API serving weather snapshots and alerts
-- ✅ Health check endpoints for monitoring
-- ✅ CloudWatch integration for centralized logging
+- Real-time weather data from OpenWeatherMap API
+- 5-day weather forecasting with 3-hour intervals
+- Temperature-based alerting system (high/low thresholds)
+- In-memory caching with TTL for performance optimization
+- RESTful API serving weather snapshots and alerts
+- Health check endpoints for monitoring
+- CloudWatch integration for centralized logging
 
 **Frontend (HTML/CSS/JavaScript)**
-- ✅ Modern, responsive UI design
-- ✅ Multi-city weather display support
-- ✅ Real-time alert notifications for extreme temperatures
-- ✅ City search history with localStorage
-- ✅ Mobile-friendly responsive interface
+- Modern, responsive UI design
+- Multi-city weather display support
+- Real-time alert notifications for extreme temperatures
+- City search history with localStorage
+- Mobile-friendly responsive interface
 
 **Data Processing Pipeline**
-- ✅ Hourly cron job for automated weather data collection
-- ✅ Producer: Fetches weather data and publishes to SQS
-- ✅ Consumer: Asynchronously processes SQS messages
-- ✅ S3 storage for raw weather snapshots (per city, per hour)
-- ✅ DynamoDB for structured metadata and metrics storage
-- ✅ SQS for decoupled, scalable message processing
+- Hourly cron job for automated weather data collection
+- Producer: Fetches weather data and publishes to SQS
+- Consumer: Asynchronously processes SQS messages
+- S3 storage for raw weather snapshots (per city, per hour)
+- DynamoDB for structured metadata and metrics storage
+- SQS for decoupled, scalable message processing
 
 **DevOps & Infrastructure**
-- ✅ Multi-container Docker architecture (Frontend, Backend, Producer, Consumer)
-- ✅ Docker Compose orchestration for easy deployment
-- ✅ AWS ECR for private container registry
-- ✅ Terraform for Infrastructure as Code (IaC)
-- ✅ EC2 deployment with IAM role-based access control
-- ✅ CI/CD pipeline with automated build, test, and deployment
-- ✅ Blue-Green deployment strategy support
-- ✅ CloudWatch metrics and log monitoring
-- ✅ Automated error handling and retry logic
+- Multi-container Docker architecture (Frontend, Backend, Producer, Consumer)
+- Docker Compose orchestration for easy deployment
+- AWS ECR for private container registry
+- Terraform for Infrastructure as Code (IaC)
+- EC2 deployment with IAM role-based access control
+- CI/CD pipeline with automated build, test, and deployment
+- Blue-Green deployment strategy support
+- CloudWatch metrics and log monitoring
+- Automated error handling and retry logic
 
 ## 🏗️ Architecture
 
@@ -363,17 +363,10 @@ curl "http://localhost:5000/forecast?city=Paris"
 - [Frontend](frontend/DEPLOY.md)
 - [Snapshots](backend/snapshot/DEPLOY.md)
 
-## 🤝 Contributing
-
-This is a portfolio/internship project. Suggestions and improvements are welcome via issues and pull requests.
-
-## 📄 License
-
-This project is open source and available for educational purposes.
 
 ## 👨‍💻 Author
 
-**Marco** - DevOps Intern @ Verisk Analytics
+**Marco** - nocram
 
 - GitHub: [@marconn01](https://github.com/marconn01)
 - Project: [Weather_App](https://github.com/marconn01/Weather_App)
